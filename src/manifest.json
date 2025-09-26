@@ -1,21 +1,23 @@
 {
   "name": "ChocoChip - Cookie Manager",
-  "version": "0.1.7",
-  "manifest_version": 2,
-  "minimum_chrome_version": "11.0.674.0",
-  "description": "Fast, easy-to-use cookie manager.",
-  "browser_action": {
-    "default_icon": "img/icon48.png",
-    "default_popup": "chocochip.html"
-  },
+  "version": "0.2.0",
+  "manifest_version": 3,
   "icons": {
-     "16": "img/icon16.png",
-     "48": "img/icon48.png",
-    "128": "img/icon128.png" 
+     "16": "images/icon16.png",
+     "48": "images/icon48.png",
+    "128": "images/icon128.png" 
+  },
+  "minimum_chrome_version": "88.0.4324.96",
+  "description": "Fast, easy-to-use cookie manager.",
+  "action": {
+    "default_icon": "images/icon48.png",
+    "default_popup": "chocochip.html"
   },
   "permissions": [
     "cookies",
-    "tabs",
+    "tabs"
+  ],
+  "host_permissions": [
     "http://*/*",
     "https://*/*"
   ]
