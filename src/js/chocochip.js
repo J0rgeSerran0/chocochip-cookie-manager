@@ -408,8 +408,12 @@ $(document).ready(function(){
 	$("#page").on('click', function(){
 		$('#result').empty();
 		$(window).height(200); // Reset the height for IE
-		chrome.tabs.getSelected(null, function(tab) {
-			ChocoChip.lookupCookieDomain({url: tab.url}, ChocoChip.showDomain);
+
+		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+			if (tabs.length > 0) {
+				const tab = tabs[0];
+				ChocoChip.lookupCookieDomain({url: tab.url}, ChocoChip.showDomain);
+			}
 		});
 	}).click();
 
