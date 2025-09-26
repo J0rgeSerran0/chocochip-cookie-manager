@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+	<title>ChocoChip - Cookie Manager</title>
+	<link type="text/css" href="css/smoothness/jquery-ui-1.10.0.custom.min.css" rel="stylesheet" />
+	<link type="text/css" href="css/chocochip.css" rel="stylesheet" />
+	<script src="js/jquery-1.9.0.min.js"></script>
+	<script src="js/jquery-ui-1.10.0.custom.min.js"></script>	
+	<script src="js/chocochip.js"></script>
+</head>
+<body>
+	<header class="navbar">
+		<ul>
+			<li><a id="page" href="#" class="btn black" title="Cookies of the current page">This page</a></li>
+			<li><a id="show_all" href="#" class="btn black" title="Show all cookies">Show All</a></li>
+			<li><a id="del_all" href="#" class="btn black" title="Delete all cookies">Delete All</a></li>
+		</ul>
+		<input id="search" placeholder="Search by Domain or URL">
+	</header>
+	
+	<div id="overlay">
+		<div class="dialog">
+			<header class="dialog-header"></header>
+			<div class="body"></div>
+			<footer>
+				<a class="btn cancel" href="#">Cancel</a>
+				<a class="btn ok" href="#">OK</a>
+			</footer>
+		</div>
+	</div>
+	
+	<div id="popup">
+		<div></div>
+	</div>
+
+	<div id="main">
+		<div id="result"></div>
+	</div>
+	<footer class="navbar">
+		<ul>
+			<li>ChocoChip - Cookie Manager</li>
+		</ul>
+	</footer>
+</body>
+</html>
