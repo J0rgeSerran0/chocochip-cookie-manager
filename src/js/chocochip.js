@@ -2,6 +2,7 @@
 /**
  *
  * Author - Yuji Kosuga (yujikosuga43@gmail.com)
+ * Updated by - Jorge Serrano (https://github.com/J0rgeSerran0/)
  *
  */
 
