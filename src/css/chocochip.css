@@ -1,7 +1,7 @@
 html, body {
-    width     : 377px; 
-    min-width : 377px;
-    max-width : 377px;
+    width     : 400px; 
+    min-width : 400px;
+    max-width : 400px;
     min-height: 200px;
     word-wrap : break-word;
     color     : #463C3C; 
@@ -50,7 +50,7 @@ body {
 }
 
 header.navbar { font-size: 12px; top   : 0; padding: 5px; }
-footer.navbar { font-size: 10px; bottom: 0; padding: 1px; height: 15px; }
+footer.navbar { font-size: 11px; bottom: 0; padding: 1px; }
 
 #search {
     margin-top : 1px;
@@ -268,8 +268,7 @@ input.sec {
        -moz-border-radius: 10px;
             border-radius: 10px;	
 } #overlay .dialog > header {
-    font-weight     : bold;
-	
+    font-weight     : bold;	
     font-size    : 1.1em;
     padding      : 5px;
 	border-color : #656565;
