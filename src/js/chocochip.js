@@ -409,7 +409,6 @@ $(document).ready(function(){
 	$("#page").on('click', function(){
 		$('#result').empty();
 		$(window).height(200); // Reset the height for IE
-
 		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 			if (tabs.length > 0) {
 				const tab = tabs[0];
