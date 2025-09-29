@@ -17,12 +17,12 @@ Developed by [**Yuji Kosuga**](https://github.com/yujikosuga) and updated by [**
 
 <img src="resources/screenshot/screenshot20120805_edit.png" />
 
-## Current Version
+## Release Notes
 > [!TIP]
 > $${\\color{green}★}$$ You can find the extension in the **DevTools** category
 
-* The version $${\\color{blue}0.1.7}$$ has been removed because it was using the manifest v2 of Google
-* $${\\color{red}September/October 2025}$$ The version $${\\color{blue}0.2.0}$$ has been modified to implement the manifest v3 of Google, and change a method deprecated at Google Chrome. This new version is being published
+* $${\\color{red}v0.1.7}$$ was removed by Google because it was using the manifest v2 of Google
+* $${\\color{blue}v2.0.0}$$ has been published the *29th of September of 2025*. It implements the manifest v3 of Google, and has included a fix with a method deprecated at Google Chrome
 
 ## Feedback
 > [!NOTE]  
