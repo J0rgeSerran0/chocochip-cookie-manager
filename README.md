@@ -1,4 +1,4 @@
-# <img src="src/img/icon48.png" /> ChocoChip - Cookie Manager
+# <img src="src/images/icon48.png" /> ChocoChip - Cookie Manager
 
 ## Description
 `ChocoChip` is a [**Chrome Extension**](https://developer.chrome.com/docs/webstore) for quickly and easily managing cookies in the Chrome Web Browser
