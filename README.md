@@ -22,7 +22,7 @@ Developed by [**Yuji Kosuga**](https://github.com/yujikosuga) and updated by [**
 > $${\\color{green}★}$$ You can find the extension in the **DevTools** category
 
 * $${\\color{red}v0.1.7}$$ was removed by Google because it was using the manifest v2 of Google
-* $${\\color{blue}v2.0.0}$$ has been published the *29th of September of 2025*. It implements the manifest v3 of Google, and has included a fix with a method deprecated at Google Chrome
+* $${\\color{blue}v0.2.0}$$ has been published the *29th of September of 2025*. It implements the manifest v3 of Google, and has included a fix with a method deprecated at Google Chrome
 
 ## Download
 * [ChocoChip - Cookie Manager](https://chromewebstore.google.com/detail/chocochip-cookie-manager/cdllihdpcibkhhkidaicoeeiammjkokm?hl=en)
