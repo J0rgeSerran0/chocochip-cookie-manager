@@ -20,6 +20,8 @@
 //             <div class="right"> - right columns
 //             <div class="clear"> - clearfix
 
+var isSearch = false;
+
 var ChocoChip = {
 
 	/**
@@ -37,7 +39,7 @@ var ChocoChip = {
 		div: $('<div>').html(
 			'<div class="left">' +
 				'<input name="domain" type="hidden">' +
-				'<label>Name<input name="name" type="text" readonly></label>' +
+				'<label>Name<input name="name" type="http://code.google.com/chrome/extensions/cookies.htmltext" readonly></label>' +
 				'<label>Path<input name="path" type="text"></label>' + 
 				'<div class="time">' + 
 					'<input class="hour" type="number" value="0"> : ' +
@@ -276,6 +278,17 @@ var ChocoChip = {
 	 * @param urlOrDomain string The search query
 	 */
 	search: function(urlOrDomain) {
+		if (!isSearch)
+		{
+			// Remove page styles
+			ChocoChip.setTabStyles('page', true);
+			
+			// Remove show_all styles
+			ChocoChip.setTabStyles('show_all', true);
+
+			isSearch = true;
+		}
+
 		if(urlOrDomain) {
 			$('#result').empty();
 			var v = (urlOrDomain.indexOf('http') >= 0 ? {url: urlOrDomain} : {domain: urlOrDomain});
@@ -285,7 +298,7 @@ var ChocoChip = {
 
 	/**
 	 * @param obj      object   the details object of the getAll method found at 
-								http://code.google.com/chrome/extensions/cookies.html
+								
 	 * @param callback function the callback function
 	 */
 	lookupCookieDomain: function(obj, callback) { 
@@ -384,7 +397,28 @@ var ChocoChip = {
 		$('.time input', divLeft).each(function() {
 			$(this).prop('readonly', !bool);
 		});
-	}
+	},
+
+	/**
+	 * Set the style for the 'Page' and 'Show All' tabs in the main window
+	 */
+	setTabStyles: function(element, remove) {
+		if (remove)
+		{
+			// Remove page styles
+			var pageElement = document.getElementById(element);
+			pageElement.style.removeProperty("background");
+			pageElement.style.removeProperty("color");
+		}
+		else
+		{
+			isSearch = false;
+
+			// Add page styles
+			document.getElementById(element).style.background  = "#15527bff";
+			document.getElementById(element).style.color  = "#eeeee8ff";
+		}
+	},
 };
 
 $(document).ready(function(){
@@ -393,8 +427,18 @@ $(document).ready(function(){
 	$(document).on('click', '.set'   , ChocoChip.save);
 	$(document).on('click', '.delete', ChocoChip.deleteSingleCookie);
 	$(document).on('click', 'h2'     , ChocoChip.headerClick);
+
+	// Add page styles
+	document.getElementById('del_all').style.background  = "#7b152eff";
+	document.getElementById('del_all').style.color  = "#eeeee8ff";
 	
 	$("#show_all").on('click', function(){
+		// Add page styles
+		ChocoChip.setTabStyles('show_all', false);
+
+		// Remove show_all styles
+		ChocoChip.setTabStyles('page', true);
+
 		$('#result').empty();    
 		ChocoChip.lookupCookieDomain({}, ChocoChip.showDomain);
 	});
@@ -407,6 +451,12 @@ $(document).ready(function(){
 		});
 	});
 	$("#page").on('click', function(){
+		// Add page styles
+		ChocoChip.setTabStyles('page', false);
+
+		// Remove show_all styles
+		ChocoChip.setTabStyles('show_all', true);
+
 		$('#result').empty();
 		$(window).height(200); // Reset the height for IE
 		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
